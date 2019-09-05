@@ -1,0 +1,8 @@
+[user]
+	name = Sherwood Callaway
+	email = shcallaway@gmail.com
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[blame]
+  coloring = highlightRecent
+
