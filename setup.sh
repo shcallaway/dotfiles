@@ -3,10 +3,6 @@
 # Ask for the administrator password upfront.
 sudo -v
 
-# Set your default shell to the newer version of bash.
-echo "/usr/local/bin/bash" >>/etc/shells
-chsh -s /usr/local/bin/bash
-
 # Install Homebrew and a bunch of apps.
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -285,3 +281,10 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # More macOS options are available here:
 # https://ss64.com/osx/syntax-defaults.html
 # https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+
+echo "It's time to set your default shell to the newer version of bash."
+echo "Edit your /etc/shells file to include this line (you may need to enter sudo-mode):"
+echo
+echo "/usr/local/bin/bash"
+echo
+echo "Then, run 'chsh -s /usr/local/bin/bash'. You will be prompted for your macOS password."
