@@ -35,7 +35,7 @@ brew install \
     ruby \
     terraform \
     stern \
-    k9s \
+    jq \
     bash-completion@2 \
     git \
     rename
@@ -281,6 +281,14 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # More macOS options are available here:
 # https://ss64.com/osx/syntax-defaults.html
 # https://github.com/mathiasbynens/dotfiles/blob/master/.macos
+
+cp .bash_completion ~/.bash_completion
+cp .bash_profile ~/.bash_profile
+cp .bashrc ~/.bashrc
+cp .fzf.bash ~/.fzf.bash
+cp .git ~/.git
+cp .gitconfig ~/.gitconfig
+cp .vimrc ~/.vimrc
 
 echo "It's time to set your default shell to the newer version of bash."
 echo "Edit your /etc/shells file to include this line (you may need to enter sudo-mode):"
