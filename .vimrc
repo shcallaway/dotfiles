@@ -12,15 +12,16 @@ endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'seesleestak/duo-mini'
+Plug 'andreypopp/vim-colors-plain'
 
 call plug#end()
 
 set termguicolors
-colorscheme duo-mini 
+colorscheme plain
 
 " Don't be a bum - lose the arrow keys
 noremap  <Up> ""
 noremap  <Down> ""
 noremap  <Left> ""
 noremap  <Right> ""
+
