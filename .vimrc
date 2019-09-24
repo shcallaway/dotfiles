@@ -3,21 +3,24 @@ set smartindent
 set tabstop=2 shiftwidth=2 expandtab
 set number
 
-" FZF
-set rtp+=/usr/local/opt/fzf
-
-" Golint
-" set rtp+=$GOPATH/src/golang.org/x/lint/misc/vim
-" autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+" Install vim-plug
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'ayu-theme/ayu-vim'
+Plug 'seesleestak/duo-mini'
 
 call plug#end()
 
 set termguicolors
-let ayucolor="dark"
-colorscheme ayu
+colorscheme duo-mini 
 
+" Don't be a bum - lose the arrow keys
+noremap  <Up> ""
+noremap  <Down> ""
+noremap  <Left> ""
+noremap  <Right> ""
