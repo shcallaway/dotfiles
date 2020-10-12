@@ -1,3 +1,10 @@
+#!/bin/sh
+
+set -e
+
+echo "Configuring fzf..."
+
+cat > ~/.fzf.zsh << EOF
 # Setup fzf
 # ---------
 if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
@@ -16,3 +23,7 @@ source "/usr/local/opt/fzf/shell/key-bindings.zsh"
 # -----------
 export FZF_DEFAULT_OPTS='--layout=reverse'
 export FZF_CTRL_R_OPTS='--height=0'
+EOF
+
+echo "Done configuring fzf!"
+

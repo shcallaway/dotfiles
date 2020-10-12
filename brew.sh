@@ -1,36 +1,55 @@
-#!/bin/bash
+#!/bin/sh
+
+set -e
+
+echo "Running Homebrew..."
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew cask install \
-    slack \
-    alfred \
-    moom \
-    spotify \
-    iterm2 \
-    firefox \
-    1password \
-    visual-studio-code \
-    little-snitch \
-    docker \
-    dash
+# Brewfile is a nice way to declaritively install things w/ Homebrew.
+# https://github.com/Homebrew/homebrew-bundle
+cat > ~/Brewfile << EOF
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
 
-brew install \
-    bash \
-    fzf \
-    bat \
-    node \
-    python \
-    ruby \
-    jq \
-    bash-completion@2 \
-    git \
-    rename \
-    terraform \
-    awscli \
-    aws-iam-authenticator \
-    kubectx \
-    kubernetes-cli \
-    kubernetes-helm \
-    derailed/k9s/k9s \
-    stern
+brew "aws-iam-authenticator"
+brew "awscli"
+brew "bash"
+brew "bash-completion@2"
+brew "bat"
+brew "docker", link: false
+brew "fzf"
+brew "git"
+brew "jq"
+brew "kubectx"
+brew "kubernetes-helm"
+brew "node"
+brew "postgresql"
+brew "rename"
+brew "ripgrep"
+brew "ruby"
+brew "stern"
+brew "terraform"
+
+cask "superhuman"
+cask "1password"
+cask "alfred"
+cask "docker"
+cask "firefox"
+cask "sublime-text"
+cask "zoomus"
+cask "iterm2"
+cask "little-snitch"
+cask "moom"
+cask "slack"
+cask "spotify"
+cask "visual-studio-code"
+EOF
+
+brew bundle --file ~/Brewfile
+rm ~/Brewfile
+rm ~/Brewfile.lock.json
+
+echo "Done running Homebrew!"
+

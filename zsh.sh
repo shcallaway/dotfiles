@@ -1,8 +1,22 @@
+#!/bin/sh
+
+# =============================
+# =========== ZSH =============
+# =============================
+
+echo "Configuring ZSH..."
+echo "NOTE: This script assumes your home dir is called 'sherwood'."
+
+# Install oh-my-zsh.
+git clone --depth=1 --branch master https://github.com/robbyrussell/oh-my-zsh ~/.oh-my-zsh
+sudo ./.oh-my-zsh/tools/install.sh
+
+cat > ~/.zshrc << EOF
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/sherwoodcallaway/.oh-my-zsh"
+export ZSH="/Users/sherwood/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -111,5 +125,12 @@ alias kns=kubens
 alias tf=terraform
 alias grep=rg
 
-# Source fancy fzf preferences
+# Source fancy fzf preferences.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+EOF
+
+# Change default shell to ZSH.
+chsh -s /bin/zsh
+
+echo "Done configuring ZSH!"
+
