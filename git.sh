@@ -28,6 +28,8 @@ cat > ~/.gitconfig << EOF
   insteadOf = https://github.com/
 [blame]
   coloring = highlightRecent
+[pull]
+  ff = only
 EOF
 
 echo "Done configuring Git!"
