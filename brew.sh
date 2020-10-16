@@ -18,7 +18,7 @@ brew "awscli"
 brew "bash"
 brew "bash-completion@2"
 brew "bat"
-brew "docker", link: false
+brew "docker"
 brew "docker-compose"
 brew "fzf"
 brew "git"
