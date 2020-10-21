@@ -35,6 +35,7 @@ brew "terraform"
 
 cask "superhuman"
 cask "1password"
+cask "wireshark"
 cask "alfred"
 cask "docker"
 cask "firefox"
